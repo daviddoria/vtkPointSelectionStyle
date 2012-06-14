@@ -31,14 +31,14 @@
 class PointSelectionStyle2D : public vtkInteractorStyleImage, public PointSelectionStyle
 {
 public:
+  int ClickedPointEvent;
+
+  PointSelectionStyle2D();
   static PointSelectionStyle2D* New();
   vtkTypeMacro(PointSelectionStyle2D, vtkInteractorStyleImage);
 
   void OnLeftButtonDown();
 
-  void Initialize() {}
-
-  void SetCurrentRenderer(vtkRenderer*);
 };
 
 #endif

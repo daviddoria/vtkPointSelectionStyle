@@ -5,10 +5,10 @@ PROJECT(PointSelectionStyle)
 FIND_PACKAGE(VTK REQUIRED)
 INCLUDE(${VTK_USE_FILE})
 
-ADD_EXECUTABLE(Demo Demo.cpp
+add_library(PointSelectionStyle
 PointSelectionStyle.cpp
 PointSelectionStyle2D.cpp
-PointSelectionStyle3D.cpp
-)
+PointSelectionStyle3D.cpp)
 
-TARGET_LINK_LIBRARIES(Demo ${VTK_LIBRARIES})
+ADD_EXECUTABLE(Demo Demo.cpp)
+TARGET_LINK_LIBRARIES(Demo ${VTK_LIBRARIES} PointSelectionStyle)

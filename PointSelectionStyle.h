@@ -34,10 +34,6 @@ class PointSelectionStyle
   public:
     virtual void OnLeftButtonDown() = 0;
 
-    virtual void SetCurrentRenderer(vtkRenderer*) = 0;
-
-    virtual void Initialize() = 0;
-
 };
 
 #endif
