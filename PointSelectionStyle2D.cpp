@@ -43,8 +43,7 @@ PointSelectionStyle2D::PointSelectionStyle2D()
 void PointSelectionStyle2D::OnLeftButtonDown()
 {
   int* clickPos = this->GetInteractor()->GetEventPosition();
-  std::cout << "Picking pixel: " << clickPos[0] << " "
-                                 << clickPos[1] << std::endl;
+  //std::cout << "Picking pixel: " << clickPos[0] << " " << clickPos[1] << std::endl;
 
   vtkSmartPointer<vtkPropPicker>  picker =
     vtkSmartPointer<vtkPropPicker>::New();
@@ -58,7 +57,7 @@ void PointSelectionStyle2D::OnLeftButtonDown()
   double picked[3];
 
   picker->GetPickPosition(picked);
-  std::cout << "Picked point with coordinate: " << picked[0] << " " << picked[1] << " " << picked[2] << std::endl;
+  // std::cout << "Picked point with coordinate: " << picked[0] << " " << picked[1] << " " << picked[2] << std::endl;
 
   this->InvokeEvent(this->ClickedPointEvent, picked);
 
